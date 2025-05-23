@@ -72,13 +72,7 @@ class Program
         Console.WriteLine($"Начисления за ГВС: {userData.HotWaterCost} + {userData.HotWaterEnergyCost}");
         Console.WriteLine($"Начисления за ЭЭ: {userData.ElectricityCost}");
         Console.WriteLine();
-
-        var totalCost = userData.ColdWaterCost +
-                        userData.HotWaterCost +
-                        userData.HotWaterEnergyCost +
-                        userData.ElectricityCost;
-
-        Console.WriteLine($"Итого к оплате: {totalCost}");
+        Console.WriteLine($"Итого к оплате: {userData.TotalCost}");
     }
 
     private static bool AskToSaveData(AppDbContext context, UserData userData)
@@ -104,7 +98,7 @@ class Program
 
     private static bool AskToCalculateAnotherBill()
     {
-        Console.WriteLine("Введите {Y} если хотите расчитать еще одну квитанцию " +
+        Console.WriteLine("Введите {Y} если хотите рассчитать еще одну квитанцию " +
                           "или {N} если хотите выйти из программы");
         var globalLoopConfirmationString = Console.ReadLine();
 
@@ -135,7 +129,7 @@ N
 6,35
 7,64
 89,51 61,2
-N
+Y
 Y
 2025 Февраль
 1
